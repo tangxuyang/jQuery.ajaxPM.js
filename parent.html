@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>		
+		<script type="text/javascript" src="jQuery.js">
+		</script>
+		<script type="text/javascript" src="jQuery.ajaxPM.js"></script>
+		
+		
+		<iframe src="http://another.com/child.html" style="display:none" id="myframe">
+
+		</iframe>
+		<script type="text/javascript">			
+
+			$.ajaxPM.initClient();
+			
+			$.ajaxPM({
+				middleUrl:'http://another.com/child.html',
+				url:"http://another.com/xxx",
+				type:"POST",
+				dataType:"JSON",
+				data:{
+					...
+				},
+				success:function(res){
+					console.log(res);
+				},
+				error:function(res){
+					console.log(res);
+				}
+			});
+			
+		</script>
+	</body>
+</html>
